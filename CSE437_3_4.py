@@ -20,11 +20,11 @@ for i in LEDlist:
     GPIO.setup(i, GPIO.OUT, initial=GPIO.LOW)
     
 for i in range(0,len(LEDlist), 2):
-    GPIO.OUT(LEDlist[i], GPIO.HIGH)
-    GPIO.OUT(LEDlist[i+1], GPIO.HIGH)
+    GPIO.output(LEDlist[i], GPIO.HIGH)
+    GPIO.output(LEDlist[i+1], GPIO.HIGH)
     time.sleep(0.5)
-    GPIO.OUT(LEDlist[i], GPIO.LOW)
-    GPIO.OUT(LEDlist[i+1], GPIO.LOW)    
+    GPIO.output(LEDlist[i], GPIO.LOW)
+    GPIO.output(LEDlist[i+1], GPIO.LOW)    
     time.sleep(0.5)
     
 
