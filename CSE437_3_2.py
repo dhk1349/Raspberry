@@ -32,9 +32,9 @@ def LEDControl(color):
 GPIO.setmode(GPIO.BCM)
     
 for i in REDLEDlist:
-    GPIO.setup(i, GPIO.OUT, inintial=GPIO.LOW)
+    GPIO.setup(i, GPIO.OUT, initial=GPIO.LOW)
 for i in GREENLEDlist:
-    GPIO.setup(i, GPIO.OUT, initial-GPIO.LOW)
+    GPIO.setup(i, GPIO.OUT, initial=GPIO.LOW)
     
 time.sleep(0.5)
 
@@ -43,6 +43,7 @@ for i in range(10):
         LEDControl("RED")
         time.sleep(0.5)
         LEDControl("GREEN")
+        time.sleep(0.5)
     except KeyboardInterrupt:
         pass
 GPIO.cleanup()
