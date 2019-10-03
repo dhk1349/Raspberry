@@ -24,9 +24,9 @@ def KeypadRead():
             break
     return keypadnum
 
-def LEDcontrol(keypadnum):
-    for i in rangre(8):
-        if (i==ketpadnum):
+def LEDControl(keypadnum):
+    for i in range(8):
+        if (i==keypadnum):
             GPIO.output(REDLEDlist[i], GPIO.HIGH)
         else:
             GPIO.output(REDLEDlist[i], GPIO.LOW)
@@ -41,7 +41,7 @@ time.sleep(0.5)
 
 while(1):
     try:
-        keypadnum = keypadRead()
+        keypadnum = KeypadRead()
         LEDControl(keypadnum)
     except KeyboardInterrupt:
         pass
