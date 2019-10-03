@@ -34,4 +34,18 @@ def getDistance():
     nStartTime = dt.datetime.now()
     while(GPIO.input(EP)==GPIO.HIGH):
         pass
-    nEndTime = dt.datetime.now()    
+    nEndTime = dt.datetime.now()   
+    
+    fDistance = (nEndTime - nStartTime).microseconds / 29./2.
+    return fDistance
+
+GPIO.setmode(GPIO.BCM)
+
+GPIO.setup(TP, GPIO.OUT, initial=GPIO.LOW)
+GPIO.setup(EP, GPIO.IN)
+time.sleep(0.5)
+
+while(1):
+    fDistance = getDistance()
+    print(fDistance)
+    time.sleep(1)
