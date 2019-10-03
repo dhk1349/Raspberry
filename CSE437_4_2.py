@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Wed Oct  2 13:26:54 2019
+Created on Thu Oct  3 09:42:51 2019
 
 @author: donghoon
 """
@@ -24,12 +24,21 @@ def KeypadRead():
             break
     return keypadnum
 
-def LEDControl(keypadnum):
-    for i in rangre(8):
-        if (i==ketpadnum):
-            GPIO.output(REDLEDlist[i], GPIO.HIGH)
-        else:
-            GPIO.output(REDLEDlist[i], GPIO.LOW)
+def LEDControl():
+    if(keypadnum+1==4):
+        for i in REDLEDlist:
+            GPIO.output(i, GPIO.HIGH)
+            time.sleep(0.5)
+            GPIO.output(i, GPIO.LOW)
+            time.sleep(0.5)
+    elif keypadnum+1==5:
+        for i in range(8,0,-1):
+            GPIO.output(REDLEDlist[i-1], GPIO.HIGH)
+            time.sleep(0.5)
+            GPIO.output(REDLEDlist[i-1], GPIO.LOW)            
+            time.sleep(0.5)
+    else:
+        pass
 
 GPIO.setmode(GPIO.BCM)
 
