@@ -19,7 +19,7 @@ EP=17
 
 def getDistance():
     fDistance = 0.0
-    nStartTime, nEndTime=0.0
+    nStartTime, nEndTime=0,0
     
     GPIO.output(TP, GPIO.LOW)
     usleep(2)
@@ -44,8 +44,9 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(TP, GPIO.OUT, initial=GPIO.LOW)
 GPIO.setup(EP, GPIO.IN)
 time.sleep(0.5)
-
+print("hello")
 while(1):
     fDistance = getDistance()
     print(fDistance)
+    print("..")
     time.sleep(1)
