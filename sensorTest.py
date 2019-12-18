@@ -51,35 +51,6 @@ for i in green:
 print("initialized")
 
 time.sleep(0.5)
-print("hello")
-
-
-
-
-
-
-ENDPOINT = ''
-THING_NAME = 'test-thing'
-
-def on_connect(mqttc, obj, flags, rc):
-	if rc == 0: #
-		print('connected!!')
-		mqttc.subscribe('test/2', qos=0) #
-
-def on_message(mqttc, obj, msg):
-	if msg.topic == 'test/2':
-		payload = msg.payload.decode('utf-8')
-		j = json.loads(payload)
-		print(j['message'])
-
-mqtt_client = mqtt.Client(client_id=THING_NAME)
-mqtt_client.on_connect = on_connect
-mqtt_client.on_message = on_message
-
-mqtt_client.tls_set('./certs/ca.pem', certfile='./certs/cert.pem.crt',
-	keyfile='./certs/private.pem.key', tls_version=ssl.PROTOCOL_TLSv1_2, ciphers=None)
-mqtt_client.connect(ENDPOINT, port=8883)
-mqtt_client.loop_start() # threaded network loop
 
 try:
     while(1):

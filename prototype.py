@@ -20,7 +20,7 @@ temp_is_parked=-1
 
 com_code = '1234'
 params = {'parkinglot_id': parking_lot, "isparked":is_parked ,"parkingspace":parking_space}
-url = 'http://119.206.253.138/api/test'
+url = 'http://54.180.94.178/api/test'
 #response = requests.post(url = url, data = json.dumps(params))
 #print (response.json())
 
@@ -70,8 +70,6 @@ for i in green:
 print("initialized")
 
 time.sleep(0.5)
-print("hello")
-
 
 
 #try:
