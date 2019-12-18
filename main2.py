@@ -37,6 +37,9 @@ GPIO.setmode(GPIO.BCM)
 for i in range(len(pins)):
    GPIO.setup(pins[i]['TP'], GPIO.OUT, initial=GPIO.LOW)
    GPIO.setup(pins[i]['EP'], GPIO.IN)
+   GPIO.setup(pins[i]['R'], GPIO.OUT)
+   GPIO.setup(pins[i]['G'], GPIO.OUT)
+
 
 while True:
    for i in range(len(pins)):
